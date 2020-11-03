@@ -1,10 +1,8 @@
 class Node:
     
-    def __init__(self, hash, previous, data, timestamp):
+    def __init__(self, hash, data):
         self.hash = hash
-        self.previous = previous
-        self.data = date
-        self.timestamp = timestamp
+        self.data = data
     
     def __repr__(self):
         return self.hash

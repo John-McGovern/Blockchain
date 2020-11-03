@@ -5,4 +5,5 @@ def create_hash(data):
     return hash
 
 
+
 #print(create_hash("ok now then"))

@@ -24,7 +24,7 @@ new.create_node("hmmm")
 
 #print(new.is_node_in_chain("hmmm"))
 
-print(new.is_node_in_chain("right"))
+#print(new.is_node_in_chain("right"))
 
 
 

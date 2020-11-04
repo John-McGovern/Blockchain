@@ -1,20 +1,20 @@
 from blockchain_basis import Blockchain
 
-#new = Blockchain("new")
+new = Blockchain("new")
 
 
-#new.create_node("Hello")
+new.create_node("Hello")
 
 
-#print(new.head_node)
 
-#new.create_node("Bye")
 
-#print(new.head_node)
+new.create_node("Bye")
 
-#new.create_node("hmmm")
 
-#print(new.head_node)
+
+new.create_node("hmmm")
+
+
 
 #print(new.head_node.next_node)
 
@@ -24,7 +24,7 @@ from blockchain_basis import Blockchain
 
 #print(new.is_node_in_chain("hmmm"))
 
-#print(new.is_node_in_chain("right"))
+print(new.is_node_in_chain("right"))
 
 
-print(7894//10)
+

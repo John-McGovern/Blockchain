@@ -12,8 +12,8 @@ def blockchain_page():
     created_block = None
     if len(request.form) > 0:
       data = request.form["block_add"]
-      print(data)
-    return render_template("Blockchain_template.html", app_name = "Blockchain")
+      
+    return render_template("Blockchain_template.html", app_name = "Blockchain", created_block = created_block)
 
 @blockchain_app.route("/add_block_output.html")
 def add_block_output():

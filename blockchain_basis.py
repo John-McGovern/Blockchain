@@ -16,6 +16,7 @@ class Blockchain:
             raise Hash_Validation_Error("The Hash for this node is invalid")
         node = Node(hash, data, self.head_node)
         self.head_node = node
+        return True
         
     
     def is_node_in_chain(self, data):

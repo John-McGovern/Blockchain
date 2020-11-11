@@ -19,8 +19,9 @@
       </form>
       {% if created_block ==True %}
         <h3>Block Added</h3>
-      {% else %}
+      {% elif created_block =="N" %}
         <h3>Block not added</h3>
+      {% else %}
       {% endif %}
     </section>
     <br>

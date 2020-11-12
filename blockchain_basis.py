@@ -11,10 +11,13 @@ class Blockchain:
         self.head_node = None
     
     def create_node(self, data):
-        hash = create_hash(data)
+        if self.head_node != None:
+            hash, pre_hash = create_hash(data, self.head_node.pre_hash)
+        else:
+            hash, pre_hash = create_hash(data)
         if not hash.startswith("00"):
             raise Hash_Validation_Error("The Hash for this node is invalid")
-        node = Node(hash, data, self.head_node)
+        node = Node(hash, data, self.head_node, pre_hash)
         self.head_node = node
         return True
         

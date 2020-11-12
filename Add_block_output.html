@@ -1,0 +1,8 @@
+<body>
+  {% if {{block_added}} == True %}
+  <h1>Your block has been added</h1>
+  <h2>The block's hash is {{new_block_hash}}</h2>
+  {%else%}
+  <h1>Your block has not been added</h1>
+  {%endif%}
+</body>

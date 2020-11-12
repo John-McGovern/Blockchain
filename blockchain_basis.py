@@ -1,5 +1,6 @@
 from node_class import Node
 from hash_creator import create_hash
+from Validation_class_error import Hash_Validation_Error
 
 
 #definition of the Blockchain class
@@ -10,9 +11,15 @@ class Blockchain:
         self.head_node = None
     
     def create_node(self, data):
-        hash = create_hash(data)
-        node = Node(hash, data, self.head_node)
+        if self.head_node != None:
+            hash, pre_hash = create_hash(data, self.head_node.pre_hash)
+        else:
+            hash, pre_hash = create_hash(data)
+        if not hash.startswith("00"):
+            raise Hash_Validation_Error("The Hash for this node is invalid")
+        node = Node(hash, data, self.head_node, pre_hash)
         self.head_node = node
+        return True
         
     
     def is_node_in_chain(self, data):
@@ -26,6 +33,8 @@ class Blockchain:
                 return False
             else:
                 current_node = current_node.next_node
+    
+    
                 
             
         

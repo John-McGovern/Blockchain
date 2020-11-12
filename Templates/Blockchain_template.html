@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>{{app_name}} App</h1>
+    <h2>Overview</h2>
+    <p>This functionality of this app includes: the creation of blockchain blocks and the ability to search through the blockchain to see what data is already in the chain </p>
+    <br>
+    <br>
+    <section>
+      <h2>Add block to chain</h2>
+      <form action="/" method="POST">
+        <label for="block_add">Enter Data</label>
+        <input id="block_add" type="text" name="block_add" value="Enter data here">
+        <input type="submit" name="submit_block_add" value="submit">
+      </form>
+      {% if created_block ==True %}
+        <h3>Block Added</h3>
+      {% elif created_block =="N" %}
+        <h3>Block not added</h3>
+      {% else %}
+      {% endif %}
+    </section>
+    <br>
+    <br>
+    <section>
+      <h2>Check if data is in chain</h2>
+      <form action="/" method="post">
+        <label for="in_list">Enter Data</label>
+        <input id="in_list" type="text" name="data_check" value="Enter data here">
+        <input type="submit" value="submit">
+      </form>
+    </section>
+  </body>
+</html>

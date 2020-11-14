@@ -48,7 +48,12 @@ with open("test.json", 'w') as json.file:
 
 with open("test.json") as readable:
     message = json.load(readable)
-
+"""
 for key, value in message.items():
     print(key, value)
     #print(key)
+"""
+
+with open("online.json") as readable:
+    message = json.load(readable)
+    print(message)

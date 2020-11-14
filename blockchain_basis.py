@@ -34,6 +34,13 @@ class Blockchain:
             else:
                 current_node = current_node.next_node
     
+    def create_blockchain_json(self):
+        file = {}
+        with open(str(self.json), 'w') as blockchain_json:
+            json.dump(file, blockchain_json)
+        return self.json
+        
+    
     
                 
             

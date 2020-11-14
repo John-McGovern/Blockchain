@@ -7,10 +7,7 @@ new = Blockchain("new")
 new.create_node("Hello", "A", "B")
 
 
-"""
-with open("new.json") as readable:
-    add_to = json.load(readable)
-"""
+
 
 
     
@@ -20,6 +17,12 @@ new.create_node("Bye", "B", "C")
 
 
 new.create_node("hmmm", "C","A")
+
+
+with open("new.json") as readable:
+    add_to = json.load(readable)
+
+print(add_to)
 
 
 

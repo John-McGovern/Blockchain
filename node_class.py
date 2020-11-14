@@ -7,6 +7,11 @@ class Node:
         self.pre_hash= pre_hash
         self.giver = giver
         self.receiver = receiver
+        self.json = { f"{self.hash}" :{
+                                "from": f"{self.giver}",
+                                "to": f"{self.receiver}",
+                                "data": f"{self.data}"}
+                      }
     
     def __repr__(self):
         return self.hash

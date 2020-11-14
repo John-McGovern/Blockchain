@@ -1,9 +1,11 @@
 
 from flask import Flask, render_template, request
 from blockchain_basis import Blockchain
+#import web_blockchain_initalisation
+import json
+
 
 online = Blockchain("online")
-
 
 blockchain_app = Flask(__name__)
 
@@ -14,12 +16,14 @@ def blockchain_page():
       form_from = request.form["from"]
       to = request.form["to"]
       data = request.form["block_add"]
-      print(form_from, to, data)
+      #print(form_from, to, data)
       created_block = online.create_node(data, form_from, to)
-      #with open("online.json") as readable:
-            #message = json.load(readable)
-            #print(message)
-    return render_template("Blockchain_template.html", app_name = "Blockchain", created_block = created_block)
+    with open("online.json") as readable:
+        message = json.load(readable)
+        print(len(message))
+        #for key in message:
+            #print(key)
+    return render_template("Blockchain_template.html", message = message, app_name = "Blockchain", created_block = created_block )
 
 #not_needed
 @blockchain_app.route("/add_block_output.html")

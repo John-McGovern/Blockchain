@@ -49,7 +49,17 @@
       <table>
         <tr>
           <th>Block Hash</th>
+          <th>Block Sender</th>
+          <th>Block Receiver</th>
+          <th>Block data</th>
         </tr>
+        {% for block in message %}
+        <tr>
+          <td>{{block}}</td>
+          <td>{{message[block]["from"]}}</td>
+          <td>{{message[block]["to"]}}</td>
+          <td>{{message[block]["data"]}}</td>
+        {%endfor%}
       </table>
     </section>
   </body>

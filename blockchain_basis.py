@@ -50,8 +50,7 @@ class Blockchain:
             json.dump(add_to, json.file)
         
         
-            
-        
+   
 
 
         

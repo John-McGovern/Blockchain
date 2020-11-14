@@ -1,18 +1,25 @@
 from blockchain_basis import Blockchain
+import json
 
 new = Blockchain("new")
 
 
-new.create_node("Hello")
+new.create_node("Hello", "A", "B")
+
+
+"""
+with open("new.json") as readable:
+    add_to = json.load(readable)
+"""
+
+
+    
+
+new.create_node("Bye", "B", "C")
 
 
 
-
-new.create_node("Bye")
-
-
-
-new.create_node("hmmm")
+new.create_node("hmmm", "C","A")
 
 
 

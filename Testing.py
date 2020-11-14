@@ -24,7 +24,10 @@ with open("new.json") as readable:
 
 print(add_to)
 
-
+for key, value in add_to.items():
+    for hasher, data in add_to[key].items():
+        if data == "A":
+            print(value)
 
 #print(new.head_node.next_node)
 

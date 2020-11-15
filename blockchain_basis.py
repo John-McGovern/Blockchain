@@ -8,13 +8,14 @@ import json
 class Blockchain:
 
     
-    def __init__(self, name):
+    def __init__(self, name, users):
         self.name = name
         self.head_node = None
         file = {}
         with open(f"{str(name)}.json", 'w') as json.file:
             json.dump(file, json.file)
         self.json = f"{str(name)}.json"
+        self.users = users
         
     
     def create_node(self, data, giver, receiver):

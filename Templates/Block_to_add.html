@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>{{users}}'s blockchain</h1>
+    <p>Hi {{users}} this is the new complete blockchain:</p>
+    {% for key, value in message.items() %}
+    <p>{{key}}, {{message[key]}}</p>
+    {%endfor%}
+  </body>
+</html>

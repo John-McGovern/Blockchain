@@ -28,7 +28,7 @@ with open("test.json", 'w') as json.file:
 
 with open("test.json") as readable:
     add_to = json.load(readable)
-    
+
 #add_to["help"]= "me"
 
 add_to.update(second_json)
@@ -57,3 +57,6 @@ for key, value in message.items():
 with open("online.json") as readable:
     message = json.load(readable)
     print(message)
+
+
+# <input id="To" type="text" name="to" value="">

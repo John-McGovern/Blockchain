@@ -13,8 +13,16 @@
     <section>
       <h2>Add block to chain</h2>
       <form action="/" method="POST">
+        <label for="From:">From</label>
+        <input id="From" type="text" name="from" value="">
+        <br>
+        <br>
+        <label for="To:">To</label>
+        <input id="To" type="text" name="to" value="">
+        <br>
+        <br>
         <label for="block_add">Enter Data</label>
-        <input id="block_add" type="text" name="block_add" value="Enter data here">
+        <input id="block_add" type="text" name="block_add" value="">
         <input type="submit" name="submit_block_add" value="submit">
       </form>
       {% if created_block ==True %}
@@ -24,15 +32,25 @@
       {% else %}
       {% endif %}
     </section>
-    <br>
-    <br>
     <section>
-      <h2>Check if data is in chain</h2>
-      <form action="/" method="post">
-        <label for="in_list">Enter Data</label>
-        <input id="in_list" type="text" name="data_check" value="Enter data here">
-        <input type="submit" value="submit">
-      </form>
+      <br>
+      <br>
+      <h2>Current Blocks in chain</h2>
+      <table>
+        <tr>
+          <th>Block Hash</th>
+          <th>Block Sender</th>
+          <th>Block Receiver</th>
+          <th>Block data</th>
+        </tr>
+        {% for block in message %}
+        <tr>
+          <td>{{block}}</td>
+          <td>{{message[block]["from"]}}</td>
+          <td>{{message[block]["to"]}}</td>
+          <td>{{message[block]["data"]}}</td>
+        {%endfor%}
+      </table>
     </section>
   </body>
 </html>

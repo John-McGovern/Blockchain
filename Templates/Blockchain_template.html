@@ -13,28 +13,19 @@
     <br>
     <section>
       <h2>Add block to chain</h2>
-      <form class="create_block" action="/" method="POST">
-        <label for="From">From:</label>
-        <select name="from" required>
-          {% for user in users%}
-          <option value="{{user}}">{{user}}</option>
-          {%endfor%}
-        </select>
+      <form action="/" method="post">
+        <br>
+        {{create_block_form.data.label}}
+        {{create_block_form.data()}}
         <br>
         <br>
-        <label for="to">To:</label>
-        <select name="to">
-          {% for user in users%}
-          <option value="{{user}}">{{user}}</option>
-          {%endfor%}
-        </select>
+        {{create_block_form.sender.label}}
+        {{create_block_form.sender()}}
         <br>
         <br>
-        <label for="block_add">Enter Data:</label>
-        <input id="block_add" type="text" name="block_add" value="" style="height: 120px; width: 400px;" required>
-        <br>
-        <br>
-        <input type="submit" name="submit_block_add" value="submit">
+        {{create_block_form.receiver.label}}
+        {{create_block_form.receiver()}}
+        {{create_block_form.submit()}}
       </form>
       {% if created_block ==True %}
         <h3>Block Added</h3>
@@ -50,9 +41,9 @@
       <br>
       <br>
       <form method="POST">
-        {{template_form.select.label}}
-        {{template_form.select()}}
-        {{template_form.submit()}}
+        {{update_form.select.label}}
+        {{update_form.select()}}
+        {{update_form.submit()}}
       </form>
       <a href="{{ url_for('update_users_chain') }}">Link to update page</a>
     </section>

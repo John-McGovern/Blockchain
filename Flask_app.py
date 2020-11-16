@@ -1,6 +1,8 @@
 
 from flask import Flask, render_template, request, redirect
 from blockchain_basis import Blockchain
+from flask_wtf import FlaskForm
+from wtforms import StringField
 #import web_blockchain_initalisation
 import json
 
@@ -8,6 +10,7 @@ users = ["visibletitle", "kittdermis", "snowflakeshiver"]
 
 
 online = Blockchain("online", users)
+#online.config["SECRET_KEY"] = "my_secret"
 
 blockchain_app = Flask(__name__)
 

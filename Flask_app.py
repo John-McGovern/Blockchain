@@ -19,15 +19,21 @@ def blockchain_page():
       to = request.form["to"]
       data = request.form["block_add"]
       created_block = online.create_node(data, form_from, to)
-      user_page = request.form["user_page"]
-      redirect("/"+user_page+"/update")
     with open("online.json") as readable:
         message = json.load(readable)
     return render_template("Blockchain_template.html", message = message, app_name = "Blockchain", created_block = created_block, users = users)
 
-#not_needed
-@blockchain_app.route("/<user>/update")
-def update_users_chain(user):
+@blockchain_app.route("/update", methods = ["GET","POST"])
+def update_users_chain():
+    with open("online.json") as readable:
+        message = json.load(readable)
+    #user_name = request.form["user_name"]
+    return render_template("update.html", users = users)
+
+
+#gives user a copy of the blockchain
+@blockchain_app.route("/update/<user>")
+def update_users_chain_page(user):
     with open("online.json") as readable:
         message = json.load(readable)
     return render_template("Block_to_add.html", users = user, message = message)

@@ -54,10 +54,19 @@ def blockchain_page():
     form_from = create_block_form.sender.data
     to = create_block_form.receiver.data
     data = create_block_form.data.data
+    create_submit = create_block_form.submit.data
+    if create_submit:
+        print("a")
     if data:
         created_block = online.create_node(data, form_from, to)
     with open("online.json") as readable:
-        message = json.load(readable)
+          message = json.load(readable)
+    update_submit = update_form.submit.data
+    update_user = update_form.select.data
+    if update_submit:
+        #print(f"/update/<{update_user}>")
+        return redirect(f"/update/{update_user}")
+    
     return render_template("Blockchain_template.html", message = message, app_name = "Blockchain", created_block = created_block, users = users, update_form = update_form, create_block_form = create_block_form )
 
 @blockchain_app.route("/update", methods = ["GET","POST"])

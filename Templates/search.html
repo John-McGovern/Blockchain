@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Blockchain Search Function</title>
+  </head>
+  <body>
+    <h1>Blockchain Search Function</h1>
+    <p>Enter a user's name to see their transactions</p>
+    <form action="/search" method="post">
+      {{ search_form.user.label }}
+      {{ search_form.user() }}
+      {{ search_form.submit()}}
+    </form>
+  </body>
+</html>

@@ -28,6 +28,9 @@ class UpdateForm(FlaskForm):
     select = SelectField("select", choices = users_dict, validators = [DataRequired()])
     submit = SubmitField("submit")
 
+class SearchForm(FlaskForm):
+    user = SelectField("User:", choices = users_dict, validators = [DataRequired()])
+    submit = SubmitField("submit")
 
 @blockchain_app.route("/", methods = ["GET","POST"])
 def blockchain_page():
@@ -71,5 +74,9 @@ def update_users_chain_page(user):
 #route where transactions can be searched for sender and receiver
 @blockchain_app.route("/search")
 def search_chain():
-    pass
+    search_form = SearchForm()
+    comment = search_form.user.data
+    sumbit = search_form.submit.data
+    
+    return render_template("Search.html", search_form= search_form)
     

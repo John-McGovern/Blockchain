@@ -29,26 +29,9 @@ class UpdateForm(FlaskForm):
     submit = SubmitField("submit")
 
 
-"""
 @blockchain_app.route("/", methods = ["GET","POST"])
 def blockchain_page():
     create_block_form = CreateBlockForm()
-    update_form = UpdateForm()
-    created_block = None
-    if len(request.form) > 0:
-      form_from = request.form["from"]
-      to = request.form["to"]
-      data = request.form["block_add"]
-      created_block = online.create_node(data, form_from, to)
-    with open("online.json") as readable:
-        message = json.load(readable)
-    return render_template("Blockchain_template.html", message = message, app_name = "Blockchain", created_block = created_block, users = users, update_form = update_form, create_block_form = create_block_form )
-"""
-
-@blockchain_app.route("/", methods = ["GET","POST"])
-def blockchain_page():
-    create_block_form = CreateBlockForm()
-    update_form = UpdateForm()
     created_block = None
     
     form_from = create_block_form.sender.data
@@ -61,20 +44,21 @@ def blockchain_page():
         created_block = online.create_node(data, form_from, to)
     with open("online.json") as readable:
           message = json.load(readable)
-    update_submit = update_form.submit.data
-    update_user = update_form.select.data
-    if update_submit:
-        #print(f"/update/<{update_user}>")
-        return redirect(f"/update/{update_user}")
     
-    return render_template("Blockchain_template.html", message = message, app_name = "Blockchain", created_block = created_block, users = users, update_form = update_form, create_block_form = create_block_form )
+    return render_template("Blockchain_template.html", message = message, app_name = "Blockchain", created_block = created_block, users = users, create_block_form = create_block_form )
 
+#route where users can get copies of the chain
 @blockchain_app.route("/update", methods = ["GET","POST"])
 def update_users_chain():
     with open("online.json") as readable:
         message = json.load(readable)
     #user_name = request.form["user_name"]
-    return render_template("update.html", users = users)
+    update_form = UpdateForm()
+    update_submit = update_form.submit.data
+    update_user = update_form.select.data
+    if update_submit:
+        return redirect(f"/update/{update_user}")
+    return render_template("update.html", users = users, update_form = update_form)
 
 
 #gives user a copy of the blockchain
@@ -83,4 +67,9 @@ def update_users_chain_page(user):
     with open("online.json") as readable:
         message = json.load(readable)
     return render_template("Block_to_add.html", users = user, message = message)
+
+#route where transactions can be searched for sender and receiver
+@blockchain_app.route("/search")
+def search_chain():
+    pass
     

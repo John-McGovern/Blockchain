@@ -40,11 +40,6 @@
       <h2>Go to user page for updates</h2>
       <br>
       <br>
-      <form method="POST">
-        {{update_form.select.label}}
-        {{update_form.select()}}
-        {{update_form.submit()}}
-      </form>
       <a href="{{ url_for('update_users_chain') }}">Link to update page</a>
     </section>
     <section>

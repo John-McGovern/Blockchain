@@ -7,15 +7,9 @@
   <body>
     <h1>Go to personal blockchain</h1>
     <form action="/update" method="post">
-      <label for="user_name">User:</label>
-      <select name="user_name">
-        {% for user in users%}
-        <option value="{{user}}">{{user}}</option>
-        {%endfor%}
-        <br>
-        <br>
-        <input type="submit" name="submit_block_add" value="submit">
-      </select>
+      {{update_form.select.label}}
+      {{update_form.select()}}
+      {{update_form.submit()}}
     </form>
   </body>
 </html>

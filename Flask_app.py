@@ -77,7 +77,7 @@ def search_chain():
     search_form = SearchForm()
     user = search_form.user.data
     submit = search_form.submit.data
-    print(type(user))
+    user_transactions = online.users_transactions(user)
     
-    return render_template("Search.html", search_form= search_form)
+    return render_template("Search.html", search_form= search_form, submit = submit, user_transactions = user_transactions, user = user)
     

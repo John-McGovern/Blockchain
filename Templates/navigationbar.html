@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>John's Blockchain App</title>
+    <link rel="stylesheet" href='/static/css/main_page.css'>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li  class= navigationbar><a href="{{url_for('home')}}">Home</a></li>
+        <li  class= navigationbar><a href="{{url_for('blockchain_page')}}">Add Blocks</a></li>
+        <li  class= navigationbar><a href="{{url_for('search_chain')}}">Search Chain</a></li>
+        <li  class= navigationbar><a href="{{url_for('update_users_chain')}}">User's Personal Chain</a></li>
+      </ul>
+    </div>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

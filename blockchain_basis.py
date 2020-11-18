@@ -31,8 +31,18 @@ class Blockchain:
         return True
         
     #no longer works
-    def is_node_in_chain(self, data):
-        hash = create_hash(data)
+    def users_transactions(self, user):
+        users_transactions = []
+        with open(f"{self.json}") as json.file:
+            read = json.load(json.file)
+        for hash, items in read.items():
+            if read[hash]["from"] == user:
+                users_transactions.append(hash)
+            elif read[hash]["to"] == user:
+                users_transactions.append(hash)
+        users_transactions = [read[hash] for hash in users_transactions]
+        return users_transactions
+        """    
         current_node = self.head_node
          
         while True:
@@ -42,7 +52,9 @@ class Blockchain:
                 return False
             else:
                 current_node = current_node.next_node
-    
+        """
+        
+        
     def update_blockchain_json(self, dictionary):
         with open(f"{self.json}") as readable:
             add_to = json.load(readable)

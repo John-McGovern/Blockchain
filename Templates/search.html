@@ -1,0 +1,32 @@
+{% extends "navigationbar.html" %}
+{% block content %}
+  <body>
+    <h1>Blockchain Search Function</h1>
+    <p>Enter a user's name to see their transactions.</p>
+    <form action="/search" method="post">
+      {{ search_form.user.label }}
+      {{ search_form.user()}}
+      {{ search_form.submit()}}
+    </form>
+    <section>
+    {% if submit %}
+      <h3>current transactions by {{user}}</h3>
+        <table>
+          <tr>
+            <th>Block Sender</th>
+            <th>Block Receiver</th>
+            <th>Block data</th>
+          </tr>
+          <tbody>
+            {% for transaction in user_transactions %}
+              <tr>
+                <td>{{transaction["from"]}}</td>
+                <td>{{transaction["to"]}}</td>
+                <td>{{transaction["data"]}}</td>
+              </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+    </section>
+    {%endif%}
+    {% endblock %}

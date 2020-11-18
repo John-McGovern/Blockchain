@@ -5,10 +5,13 @@
     <title></title>
   </head>
   <body>
-    <div>
-
-
-    <p>Home</p>
+    <div id= navigationbar>
+      <ul>
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('blockchain_page')}}">Add blocks</a></li>
+        <li><a href="{{url_for('search_chain')}}">Search chain</a></li>
+        <li><a href="{{url_for('update_users_chain')}}">Users persoanl chain</a></li>
+      </ul>
     </div>
     {% block content %}
     {% endblock %}

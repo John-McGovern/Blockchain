@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Update page</title>
-  </head>
-  <body>
+{% extends "navigationbar.html" %}
+{% block content %}
+  <section>
     <h1>Go to personal blockchain</h1>
     <form action="/update" method="post">
       {{update_form.select.label}}
       {{update_form.select()}}
       {{update_form.submit()}}
     </form>
-  </body>
-</html>
+  </section>
+{% endblock %}

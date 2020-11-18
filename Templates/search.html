@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Blockchain Search Function</title>
-  </head>
+{% extends "navigationbar.html" %}
+{% block content %}
   <body>
     <h1>Blockchain Search Function</h1>
     <p>Enter a user's name to see their transactions</p>
@@ -33,5 +29,4 @@
         </table>
     </section>
     {%endif%}
-  </body>
-</html>
+    {% endblock %}

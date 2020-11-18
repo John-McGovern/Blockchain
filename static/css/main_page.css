@@ -1,3 +1,56 @@
 h1 {
   color: green;
+  font-size: 55px;
+  text-align: center;
+  font-family: Geneva, Tahoma;
+}
+
+h2, h3, h4, h5, h6, label {
+  color: white;
+  text-align: center;
+  font-family: Courier;
+}
+
+form{
+  text-align: center;
+}
+
+body{
+  background: black;
+}
+
+p{
+  color: white;
+  text-align: center;
+  font-family: Courier;
+}
+
+table, th, td {
+  border: 1px solid white;
+  color: white;
+  text-align: center;
+}
+
+th{
+  font-size: 20px;
+}
+
+table{
+  width: 100%;
+}
+
+.navigationbar {
+  display: inline;
+  text-align: center;
+  padding: 10px;
+}
+
+li {
+  text-align: center;
+  color: white;
+  font-family: Courier;
+}
+
+a {
+  color: green;
 }

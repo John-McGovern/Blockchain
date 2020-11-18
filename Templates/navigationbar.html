@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>John's Blockchain App</title>
-    <link rel="stylesheet" href='/static/main_page.css' />
+    <link rel="stylesheet" href='/static/css/main_page.css'>
   </head>
   <body>
-    <div id= navigationbar>
+    <div>
       <ul>
-        <li><a href="{{url_for('home')}}">Home</a></li>
-        <li><a href="{{url_for('blockchain_page')}}">Add blocks</a></li>
-        <li><a href="{{url_for('search_chain')}}">Search chain</a></li>
-        <li><a href="{{url_for('update_users_chain')}}">Users persoanl chain</a></li>
+        <li  class= navigationbar><a href="{{url_for('home')}}">Home</a></li>
+        <li  class= navigationbar><a href="{{url_for('blockchain_page')}}">Add Blocks</a></li>
+        <li  class= navigationbar><a href="{{url_for('search_chain')}}">Search Chain</a></li>
+        <li  class= navigationbar><a href="{{url_for('update_users_chain')}}">User's Personal Chain</a></li>
       </ul>
     </div>
     {% block content %}

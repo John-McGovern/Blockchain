@@ -2,7 +2,7 @@
 {% block content %}
   <body>
     <h1>Blockchain Search Function</h1>
-    <p>Enter a user's name to see their transactions</p>
+    <p>Enter a user's name to see their transactions.</p>
     <form action="/search" method="post">
       {{ search_form.user.label }}
       {{ search_form.user()}}

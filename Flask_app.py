@@ -21,16 +21,16 @@ class CreateBlockForm(FlaskForm):
     data = StringField("Enter Data:", validators = [DataRequired()])
     sender = SelectField("Sender:", choices = users_dict, validators = [DataRequired()])
     receiver = SelectField("Receiver:", choices = users_dict, validators = [DataRequired()])
-    submit = SubmitField("submit")
+    submit = SubmitField("Submit")
 
 class UpdateForm(FlaskForm):
-    comment = StringField("comment", validators = [DataRequired()])
-    select = SelectField("select", choices = users_dict, validators = [DataRequired()])
-    submit = SubmitField("submit")
+    comment = StringField("Comment", validators = [DataRequired()])
+    select = SelectField("Select:", choices = users_dict, validators = [DataRequired()])
+    submit = SubmitField("Submit:")
 
 class SearchForm(FlaskForm):
     user = SelectField("User:", choices = users_dict, validators = [DataRequired()])
-    submit = SubmitField("submit", validators = [DataRequired()])
+    submit = SubmitField("Submit:", validators = [DataRequired()])
 
 @blockchain_app.route("/", methods = ["GET","POST"])
 def blockchain_page():

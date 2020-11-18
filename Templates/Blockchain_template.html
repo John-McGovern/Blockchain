@@ -1,14 +1,9 @@
 
   {% extends "navigationbar.html" %}
   {% block content %}
-    </section>
-    <h1>{{app_name}} App</h1>
-    <h2>Overview</h2>
-    <p>This functionality of this app includes: the creation of blockchain blocks and the ability to search through the blockchain to see what data is already in the chain </p>
-    <br>
-    <br>
     <section>
-      <h2>Add block to chain</h2>
+    <h1>Add blocks to the chain</h1>
+    <section>
       <form action="/" method="post">
         <br>
         {{create_block_form.data.label}}
@@ -35,7 +30,7 @@
     <section>
       <br>
       <br>
-      <h2>Current Blocks in chain</h2>
+      <h2>Current Blocks in chain:</h2>
       <table>
         <tr>
           <th>Block Hash</th>

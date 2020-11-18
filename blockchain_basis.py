@@ -1,13 +1,18 @@
+"""
+This file contains the Blockchain app and its methods.
+"""
 from node_class import Node
 from hash_creator import create_hash
 from Validation_class_error import Hash_Validation_Error
 import json
 
 
-#definition of the Blockchain class
+#Definition of the Blockchain class
 class Blockchain:
-
-    
+    """
+    The initalisation method for the Blockcahin class. It requires a name and the users of the blockcahin to be given.
+    The chains, name, head_node, json and users can be accessed using the self. method
+    """
     def __init__(self, name, users):
         self.name = name
         self.head_node = None
@@ -16,8 +21,11 @@ class Blockchain:
             json.dump(file, json.file)
         self.json = f"{str(name)}.json"
         self.users = users
-        
-    
+    """    
+    This method creates a node (or block) for the chain. It becomes the head node of the chain. 
+    It also checks that the hash meets the nonces requirement are met (the hash starting with 00).
+    If it is the node is added to the chain, if not then a error is raised.
+    """
     def create_node(self, data, giver, receiver):
         if self.head_node != None:
             hash, pre_hash = create_hash(data, self.head_node.pre_hash)
@@ -29,8 +37,10 @@ class Blockchain:
         self.head_node = node
         self.update_blockchain_json(node.json)
         return True
-        
-    #no longer works
+     
+    """
+    This method searches through the chain, with a given username and finds all of the transactions of that user.
+    """
     def users_transactions(self, user):
         users_transactions = []
         with open(f"{self.json}") as json.file:
@@ -42,19 +52,10 @@ class Blockchain:
                 users_transactions.append(hash)
         users_transactions = [read[hash] for hash in users_transactions]
         return users_transactions
-        """    
-        current_node = self.head_node
-         
-        while True:
-            if current_node.hash == hash:
-                return True
-            elif not current_node.next_node:
-                return False
-            else:
-                current_node = current_node.next_node
-        """
-        
-        
+
+    """
+    This adds a dictionary to the chain, by accessing its json file.
+    """
     def update_blockchain_json(self, dictionary):
         with open(f"{self.json}") as readable:
             add_to = json.load(readable)

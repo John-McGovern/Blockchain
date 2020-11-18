@@ -7,6 +7,13 @@ h1 {
 
 }
 
+td, tr {
+  border: 1px solid black;
+}
+
+th {
+  border: 1px solid blue;
+}
 
 body {
   padding-top: 2em;

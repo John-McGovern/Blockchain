@@ -80,4 +80,7 @@ def search_chain():
     user_transactions = online.users_transactions(user)
     
     return render_template("Search.html", search_form= search_form, submit = submit, user_transactions = user_transactions, user = user)
-    
+
+@blockchain_app.route("/home", methods = ["GET","POST"])
+def home():
+    return render_template("home.html")

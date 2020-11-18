@@ -60,3 +60,17 @@ with open("online.json") as readable:
 
 
 # <input id="To" type="text" name="to" value="">
+
+"""
+<form action="/" method="post">
+<label for="user_page">User:</label>
+<select name="user_page">
+{% for user in users%}
+<option value="{{user}}">{{user}}</option>
+{%endfor%}
+</select>
+<br>
+<br>
+<input type="submit" name="user_page" value="submit">
+</form>
+"""

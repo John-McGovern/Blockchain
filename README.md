@@ -1,6 +1,13 @@
-<<<<<<< Updated upstream
-# Blockchain
-A blockchain application in python3 
+# Project Title
+A blockchain application in python3
+
+# Overview
+A blockchain application that has an attached web app. The project uses web python3 with flask and wtforms as well as html5 and css3.
+
+## Purpose
+The purpose of building this web app was to cement my learning of python as well as gain more experience of flask, html and css.
+
+## Functionality  
 =======
 # Project Title
 A blockchain application in python3
@@ -22,7 +29,7 @@ The functionality of the app includes:
 # Demo-Preview
 
 ## BackEnd
-![web app blockchain class](/pictures/blockchain_code.jpg)
+![web app blockchain class](/pictures/blockhain_code.jpg)
 This file contains the code for my blockchain class
 
 ![web app node class code](/pictures/node_code.jpg)

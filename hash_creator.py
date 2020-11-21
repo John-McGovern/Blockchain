@@ -1,8 +1,14 @@
+"""
+This file contains the hashing function.
+"""
+
+
+
 from hashlib import sha256      
 
 """
-function takes new data and previous blocks hash (defaults to 0, if no previous hash), encodes then hashes it. It then adds a nonce onto the hash to make it harder
-to reproduce. the function finally then returns the hash and its pre-hash.
+The function takes new data and previous blocks hash (defaults to 0, if no previous hash), encodes then hashes it. It then adds a nonce onto the hash to make it harder
+to reproduce. The function finally then returns the hash and its pre-hash.
 
 Have to add previous data and new data together at encode stage.
 """

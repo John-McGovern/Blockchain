@@ -21,12 +21,12 @@
       {% if created_block ==True %}
         <h3>Block Added</h3>
       {% elif created_block =="N" %}
-        <h3>Block not added</h3>
-      {% else %}
+        <h3 class = warn>Block not added</h3>
+        {% if different_to_sender == False %}
+          <h3 class = warn>Sender and Receiver must be different</h3>
+        {% endif %}
       {% endif %}
     </section>
-    <br>
-    <br>
     <section>
       <br>
       <br>

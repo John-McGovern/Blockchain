@@ -1,3 +1,7 @@
+"""
+this file is a testing environment for the Blockchain class
+"""
+
 from blockchain_basis import Blockchain
 import json
 

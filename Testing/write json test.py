@@ -1,4 +1,10 @@
 """
+This file is a testing environment for writing to json
+"""
+
+
+
+"""
 when updating json, first open it with the open function and save to a variable,
 then use the update function to add extra data to that variable,
 then overwrite the old json with the new data.
